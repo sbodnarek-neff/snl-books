@@ -70,7 +70,6 @@ function App() {
               className="form__input"
             />
           </div>
-
           <Button text="Submit" />
         </form>
       </div>
