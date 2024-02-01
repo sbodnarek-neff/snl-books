@@ -102,13 +102,6 @@ function App() {
               ref={formRef}
             />
           </div>
-          {/* <div className="form__container">
-            <label className="form__label">Have you read this book?</label>
-            <input id="toggle-on" name="toggle" type="radio"/>
-            <label for="toggle-on">Yes!</label>
-            <input id="toggle-off" name="toggle" type="radio"/>
-            <label for="toggle-off">No</label>
-          </div> */}
           <Button text="Submit" />
         </form>
       </div>
@@ -119,8 +112,7 @@ function App() {
           {bookList?.map((book) => {
             return (
               <li key={book.id} className="book">
-
-                <img src={book.image} alt="book cover" />
+                {/* <img src={book.image} alt="book cover image" /> */}
                 <p>Title: {book.title}</p>
                 <p>Author: {book.author}</p>
                 <p>{book.year}</p>
