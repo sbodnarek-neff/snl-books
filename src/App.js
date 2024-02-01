@@ -22,7 +22,7 @@ function App() {
   }, []);
 
   const addBook = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
 
     //stating form input values
     const title = formRef.current.title.value;
@@ -47,6 +47,8 @@ function App() {
     } else {
       alert("Failed to add book, you have errors in you form");
     }
+
+    postNewBook(title, author, year);
   };
 
   const postNewBook = async (title, author, year) => {
@@ -62,6 +64,10 @@ function App() {
       console.error("This is the error ", error);
     }
   };
+
+  // useEffect(() => {
+  //   addBook();
+  // }, [postNewBook]);
 
   return (
     <div className="App">
@@ -118,11 +124,19 @@ function App() {
             {bookList?.map((book) => {
               return (
                 <li key={book.id} className="list__book">
-                  <img src={book.image} alt="book cover" />
+                  <img
+                    src={book?.image}
+                    alt="book cover"
+                    className="list__image"
+                  />
 
                   <div className="list__box">
-                    <p className="List__text">Title: {book.title}</p>
-                    <p className="List__text">Author: {book.author}</p>
+                    <p className="List__text">
+                      <i>Title:</i> {book.title}
+                    </p>
+                    <p className="List__text">
+                      <i>Author:</i> {book.author}
+                    </p>
                     <p className="List__text">{book.year}</p>
                   </div>
                 </li>
