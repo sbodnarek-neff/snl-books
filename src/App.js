@@ -2,6 +2,7 @@ import "./App.scss";
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import Button from "./components/Button/Button";
+import './partials/global.scss'
 
 function App() {
   const [bookList, setBookList] = useState([]);
@@ -64,7 +65,10 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="App__title">Welcome to SNL Booklist</h1>
+      <nav className="App__nav">
+        <h1 className="App__title">Welcome to SNL Booklist</h1>
+        <h2 className="App__subtitle" >a handy way to log the books you've read!</h2>
+      </nav>
 
       <main className="main">
         <div className="form">
@@ -121,7 +125,8 @@ function App() {
           })}
         </ul>
       </section>
-    </div>
+    </main> 
+    </div>   
   );
 }
 

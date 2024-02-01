@@ -1,5 +1,21 @@
+@use '../src/partials/global.scss' as *; 
+
 .App {
   text-align: center;
+  &__nav{
+    padding-top: 3rem; 
+  }
+  &__title{
+      font-family: 'Special Elite', system-ui;
+      font-size: 5rem;
+      margin:0; 
+
+  }
+  &__subtitle{
+    font-family: 'Poppins', sans-serif;
+    margin-top:0.5rem;
+  }
+  
 }
 
 .list {
