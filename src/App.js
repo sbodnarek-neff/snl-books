@@ -8,11 +8,10 @@ function App() {
   const formRef = useRef();
 
   useEffect(() => {
-    //get book list from api
+    //getting book list from api
     const getBooks = async () => {
       try {
         const response = await axios.get("http://localhost:9000/");
-        console.log(response.data);
         setBookList(response.data);
       } catch (error) {
         console.error("This is the error ", error);
@@ -26,21 +25,17 @@ function App() {
     // Add book to the back-end server, and then update
     // the state with the response
 
-    // const formData = new FormData(e.target);
-    const book = formRef.current.book.value;
     const title = formRef.current.title.value;
-    console.log(formRef);
+    const author = formRef.current.author.value;
 
-    console.log(book, title);
-
-    await postNewBook(book, title);
+    await postNewBook(title, author);
   };
 
-  const postNewBook = async (book, title) => {
+  const postNewBook = async (title, author) => {
     try {
       const newBook = {
-        book: book,
         title: title,
+        author: author,
       };
       const postresponse = await axios.post("http://localhost:9000", newBook);
       setBookList([...bookList, newBook]);
@@ -59,6 +54,7 @@ function App() {
           <div className="form__container">
             <label className="form__label">Title:</label>
             <input
+              name="title"
               type="text"
               placeholder="Enter book title"
               className="form__input"
@@ -68,6 +64,7 @@ function App() {
           <div className="form__container">
             <label className="form__label">Author:</label>
             <input
+              name="author"
               type="text"
               placeholder="Enter author"
               className="form__input"
@@ -82,16 +79,16 @@ function App() {
         <h2>Book List</h2>
         <ul className="list">
           {bookList?.map((book) => {
-            <li key={book.id} className="book">
-              <img src={book.image} />
-              <p>Title: {book.title}</p>
-              <p>Author: {book.author}</p>
-              <p>{book.year}</p>
-            </li>;
+            return (
+              <li key={book.id} className="book">
+                <img src={book.image} alt="book cover image" />
+                <p>Title: {book.title}</p>
+                <p>Author: {book.author}</p>
+                <p>{book.year}</p>
+              </li>
+            );
           })}
         </ul>
-
- 
       </section>
     </div>
   );
