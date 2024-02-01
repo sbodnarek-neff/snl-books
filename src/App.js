@@ -70,13 +70,13 @@ function App() {
               className="form__input"
             />
           </div>
-          <div className="form__container">
+          {/* <div className="form__container">
             <label className="form__label">Have you read this book?</label>
             <input id="toggle-on" name="toggle" type="radio"/>
             <label for="toggle-on">Yes!</label>
             <input id="toggle-off" name="toggle" type="radio"/>
             <label for="toggle-off">No</label>
-          </div>
+          </div> */}
           <Button text="Submit" />
         </form>
       </div>
@@ -87,10 +87,17 @@ function App() {
           {bookList?.map((book) => {
             return (
               <li key={book.id} className="book">
-                <img src={book.image} alt="book cover image" />
+                {/* <img src={book.image} alt="book cover image" /> */}
                 <p>Title: {book.title}</p>
                 <p>Author: {book.author}</p>
                 <p>{book.year}</p>
+                <div className="form__container">
+                  <label className="form__label">Have you read this book?</label>
+                  <input id="toggle-on" name="toggle" type="radio"/>
+                  <label for="toggle-on">Yes!</label>
+                  <input id="toggle-off" name="toggle" type="radio"/>
+                  <label for="toggle-off">No</label>
+                </div>
               </li>
             );
           })}
