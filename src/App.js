@@ -75,7 +75,7 @@ function App() {
       <main className="main">
         <div className="form">
           <h2 className="form__title">ADD A BOOK</h2>
-          <form onSubmit={addBook} ref={formRef}>
+          <form onSubmit={addBook} ref={formRef} className="form__styling">
             <div className="form__container">
               <label className="form__label">Title:</label>
               <input
@@ -108,7 +108,7 @@ function App() {
                 ref={formRef}
               />
             </div>
-            <Button text="Submit" />
+            <Button text="Submit"  className="form__button"/>
           </form>
         </div>
 
