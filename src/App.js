@@ -20,7 +20,6 @@ function App() {
     getBooks();
   }, []);
 
-
   const addBook = async (e) => {
     e.preventDefault();
 
@@ -67,51 +66,45 @@ function App() {
     <div className="App">
       <h1 className="App__title">Welcome to SNL Booklist</h1>
 
-      <div className="form">
-        <h2 className="form__title">ADD A BOOK</h2>
-        <form onSubmit={addBook} ref={formRef}>
-          <div className="form__container">
-            <label className="form__label">Title:</label>
-            <input
-              name="title"
-              type="text"
-              placeholder="Enter book title"
-              className="form__input"
-              ref={formRef}
-            />
-          </div>
+      <main className="main">
+        <div className="form">
+          <h2 className="form__title">ADD A BOOK</h2>
+          <form onSubmit={addBook} ref={formRef}>
+            <div className="form__container">
+              <label className="form__label">Title:</label>
+              <input
+                name="title"
+                type="text"
+                placeholder="Enter book title"
+                className="form__input"
+                ref={formRef}
+              />
+            </div>
 
-          <div className="form__container">
-            <label className="form__label">Author:</label>
-            <input
-              name="author"
-              type="text"
-              placeholder="Enter author"
-              className="form__input"
-              ref={formRef}
-            />
-          </div>
+            <div className="form__container">
+              <label className="form__label">Author:</label>
+              <input
+                name="author"
+                type="text"
+                placeholder="Enter author"
+                className="form__input"
+                ref={formRef}
+              />
+            </div>
 
-          <div className="form__container">
-            <label className="form__label">Year:</label>
-            <input
-              name="year"
-              type="text"
-              placeholder="Enter year"
-              className="form__input"
-              ref={formRef}
-            />
-          </div>
-          {/* <div className="form__container">
-            <label className="form__label">Have you read this book?</label>
-            <input id="toggle-on" name="toggle" type="radio"/>
-            <label for="toggle-on">Yes!</label>
-            <input id="toggle-off" name="toggle" type="radio"/>
-            <label for="toggle-off">No</label>
-          </div> */}
-          <Button text="Submit" />
-        </form>
-      </div>
+            <div className="form__container">
+              <label className="form__label">Year:</label>
+              <input
+                name="year"
+                type="text"
+                placeholder="Enter year"
+                className="form__input"
+                ref={formRef}
+              />
+            </div>
+            <Button text="Submit" />
+          </form>
+        </div>
 
       <section>
         <h2>Book List</h2>
@@ -119,18 +112,10 @@ function App() {
           {bookList?.map((book) => {
             return (
               <li key={book.id} className="book">
-
                 <img src={book.image} alt="book cover" />
                 <p>Title: {book.title}</p>
                 <p>Author: {book.author}</p>
                 <p>{book.year}</p>
-                <div className="form__container">
-                  <label className="form__label">Have you read this book?</label>
-                  <input id="toggle-on" name="toggle" type="radio"/>
-                  <label for="toggle-on">Yes!</label>
-                  <input id="toggle-off" name="toggle" type="radio"/>
-                  <label for="toggle-off">No</label>
-                </div>
               </li>
             );
           })}
