@@ -2,7 +2,7 @@ import "./App.scss";
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import Button from "./components/Button/Button";
-import './partials/global.scss'
+import "./partials/global.scss";
 
 function App() {
   const [bookList, setBookList] = useState([]);
@@ -67,7 +67,9 @@ function App() {
     <div className="App">
       <nav className="App__nav">
         <h1 className="App__title">Welcome to SNL Booklist</h1>
-        <h2 className="App__subtitle" >a handy way to log the books you've read!</h2>
+        <h2 className="App__subtitle">
+          a handy way to log the books you've read!
+        </h2>
       </nav>
 
       <main className="main">
@@ -110,21 +112,25 @@ function App() {
           </form>
         </div>
 
-      <section>
-        <h2>Book List</h2>
-        <ul className="list">
-          {bookList?.map((book) => {
-            return (
-              <li key={book.id} className="book">
-                <img src={book.image} alt="book cover" />
-                <p>Title: {book.title}</p>
-                <p>Author: {book.author}</p>
-                <p>{book.year}</p>
-              </li>
-            );
-          })}
-        </ul>
-      </section>
+        <section>
+          <h2>Book List</h2>
+          <ul className="list">
+            {bookList?.map((book) => {
+              return (
+                <li key={book.id} className="list__book">
+                  <img src={book.image} alt="book cover" />
+
+                  <div className="list__box">
+                    <p className="List__text">Title: {book.title}</p>
+                    <p className="List__text">Author: {book.author}</p>
+                    <p className="List__text">{book.year}</p>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      </main>
     </div>
   );
 }
