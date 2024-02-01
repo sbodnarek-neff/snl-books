@@ -1,5 +1,7 @@
-// import "./Button.scss";
+import "./Buttons.scss";
 import React from "react";
+
+
 
 function Button({ text }) {
   return <button className="button">{text}</button>;
