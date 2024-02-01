@@ -11,12 +11,14 @@ function App() {
     //get book list from api
     const getBooks = async () => {
       try {
-        const response = await axios.get("http://localhost:9000");
+        const response = await axios.get("http://localhost:9000/");
+        console.log(response.data);
         setBookList(response.data);
       } catch (error) {
         console.error("This is the error ", error);
       }
     };
+    getBooks();
   }, []);
 
   const addBook = async (e) => {
@@ -24,7 +26,7 @@ function App() {
     // Add book to the back-end server, and then update
     // the state with the response
 
-    const formData = new FormData(e.target);
+    // const formData = new FormData(e.target);
     const book = formRef.current.book.value;
     const title = formRef.current.title.value;
     console.log(formRef);
@@ -46,16 +48,6 @@ function App() {
       console.error("This is the error ", error);
     }
   };
-
-  //will render the book list from the api
-  const renderBookList = bookList.map((book) => {
-    <li key={book.id} className="...">
-      <img src={book.image} />
-      <p>Title: {book.title}</p>
-      <p>Author: {book.author}</p>
-      <p>{book.year}</p>
-    </li>;
-  });
 
   return (
     <div className="App">
@@ -88,7 +80,18 @@ function App() {
 
       <section>
         <h2>Book List</h2>
-        <ul className="...">{renderBookList}</ul>
+        <ul className="list">
+          {bookList?.map((book) => {
+            <li key={book.id} className="book">
+              <img src={book.image} />
+              <p>Title: {book.title}</p>
+              <p>Author: {book.author}</p>
+              <p>{book.year}</p>
+            </li>;
+          })}
+        </ul>
+
+ 
       </section>
     </div>
   );
