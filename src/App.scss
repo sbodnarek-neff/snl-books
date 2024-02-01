@@ -1,23 +1,22 @@
-@use '../src/partials/global.scss' as *; 
+@use "../src/partials/global.scss" as *;
 
 .App {
   text-align: center;
   
   &__nav{
     padding-top: 3rem; 
-  }
-  &__title{
-      font-family: 'Special Elite', system-ui;
-      font-size: 5rem;
-      margin:0; 
 
+  }
+  &__title {
+    font-family: "Special Elite", system-ui;
+    font-size: 5rem;
+    margin: 0;
   }
   &__subtitle{
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     margin-top:0.5rem;
   }
-  
 }
 
 .form{
@@ -69,10 +68,28 @@ main {
 
   &__book {
     width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 16px;
+  }
+
+  &__image {
+    width: 200px;
+    height: 300px;
+    margin-bottom: 8px;
   }
 
   &__box {
-    width: fit-content;
+    margin-top: 8px;
+    width: 150px;
+    height: 30%;
+    background-color: #f5dfe9;
     border: black solid 1px;
+    border-radius: 6px;
+    // box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    //   rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+      rgba(0, 0, 0, 0.22) 0px 10px 10px;
   }
 }
