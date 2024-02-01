@@ -70,6 +70,13 @@ function App() {
               className="form__input"
             />
           </div>
+          <div className="form__container">
+            <label className="form__label">Have you read this book?</label>
+            <input id="toggle-on" name="toggle" type="radio"/>
+            <label for="toggle-on">Yes!</label>
+            <input id="toggle-off" name="toggle" type="radio"/>
+            <label for="toggle-off">No</label>
+          </div>
           <Button text="Submit" />
         </form>
       </div>
