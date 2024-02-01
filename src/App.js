@@ -119,7 +119,7 @@ function App() {
         </div>
 
         <section>
-          <h2>Book List</h2>
+          <h2 className="booklist">Book List</h2>
           <ul className="list">
             {bookList?.map((book) => {
               return (
@@ -131,13 +131,13 @@ function App() {
                   />
 
                   <div className="list__box">
-                    <p className="List__text">
+                    <p className="list__text">
                       <i>Title:</i> {book.title}
                     </p>
-                    <p className="List__text">
+                    <p className="list__text--center">
                       <i>Author:</i> {book.author}
                     </p>
-                    <p className="List__text">{book.year}</p>
+                    <p className="list__text">{book.year}</p>
                   </div>
                 </li>
               );

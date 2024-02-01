@@ -2,7 +2,7 @@
 
 .App {
   text-align: center;
-  
+  padding:2.5rem; 
   &__nav{
     padding-top: 3rem; 
 
@@ -18,10 +18,21 @@
     margin-top:0.5rem;
   }
 }
-
+.booklist{
+  font-family: 'Special Elite', system-ui;
+  margin-top:0.5rem;
+  font-size: 2.5rem;
+}
 .form{
   display: flex;
   flex-direction: column;
+  background-color: #8ed1fc;
+  padding-left:2rem; 
+  padding-right:2rem; 
+  padding-top:2rem; 
+  height: 40vh;
+  border-radius: 0.5rem ;
+
   &__container{
     display: flex;
     padding-bottom:1rem; 
@@ -80,6 +91,18 @@ main {
     margin-bottom: 8px;
   }
 
+  &__text{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    margin:0; 
+    &--center{
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      padding-top:0.25rem; 
+      padding-bottom:0.25rem; 
+    }
+  }
+
   &__box {
     margin-top: 8px;
     width: 150px;
@@ -87,6 +110,7 @@ main {
     background-color: #f5dfe9;
     border: black solid 1px;
     border-radius: 6px;
+    padding:1rem;
     // box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
     //   rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
