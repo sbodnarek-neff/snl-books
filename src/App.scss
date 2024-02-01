@@ -18,13 +18,22 @@
   
 }
 
+main {
+  display: flex;
+  justify-content: space-around;
+}
 .list {
   list-style: none;
-}
-// .book{
-//   background-image: url("https://i.pinimg.com/originals/72/c6/7a/72c67af70b9c14f254e4d56125b99873.jpg") ;
-//   background-repeat: none;
-//   background-color: red;
-//   height:auto; 
+  width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
 
-// }
+  &__book {
+    width: 30%;
+  }
+
+  &__box {
+    width: fit-content;
+    border: black solid 1px;
+  }
+}
